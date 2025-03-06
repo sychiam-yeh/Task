@@ -8,11 +8,20 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
+    /* =================================================================
+     *                   MARK: - Local Initialization
+     * ================================================================= */
     var passedMovieList = MovieList()
     
+    /* =================================================================
+     *                   MARK: - Outlet Initialization
+     * ================================================================= */
     @IBOutlet weak var backgroundImageView: UIImageView!
     
+    /* =================================================================
+     *                   MARK: - Class Function
+     * ================================================================= */
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,9 +10,15 @@ import UIKit
 class MovieListCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "movieListCell"
     
+    /* =================================================================
+     *                   MARK: - Local Initialization
+     * ================================================================= */
     var movieList = MovieList()
     var onViewActionHandler: ((MovieList) -> Void)?
     
+    /* =================================================================
+     *                   MARK: - Outlet Initialization
+     * ================================================================= */
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -21,6 +27,9 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         self.onViewActionHandler?(self.movieList)
     }
     
+    /* =================================================================
+     *                   MARK: - Class Function
+     * ================================================================= */
     override func awakeFromNib() {
         super.awakeFromNib()
     }

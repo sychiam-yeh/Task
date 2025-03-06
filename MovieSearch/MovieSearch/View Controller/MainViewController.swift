@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import IQKeyboardManagerSwift
 
 fileprivate enum Section {
     case main
@@ -20,6 +21,7 @@ class MainViewController: UIViewController {
     fileprivate var apiKey = "8d6aa4ca"
     fileprivate var cancellables = Set<AnyCancellable>()
     fileprivate var movieList = MovieDO()
+    fileprivate var searchText = "movie"
     fileprivate var dataSource: UICollectionViewDiffableDataSource<Section, MovieList>?
    
     /* =================================================================
@@ -27,6 +29,7 @@ class MainViewController: UIViewController {
      * ================================================================= */
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     /* =================================================================
      *                   MARK: - Class Function
@@ -34,13 +37,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.showLoadingScreen()
         self.setupCollectionView()
-        self.getMovieList(searchText: "movie")
+        self.getMovieList(searchText: self.searchText)
         self.collectionView.delegate = self
     }
     
     fileprivate func getMovieList(searchText: String) {
+        self.showLoadingScreen()
         API.initiateGETSingleObjectWithoutWrapper(module: .getMovie(searchText, self.apiKey), typeOf: MovieDO())
             .sink { response in
                 self.hideLoadingScreen()
@@ -69,7 +72,6 @@ class MainViewController: UIViewController {
         }
     }
 }
-
 
 /* =================================================================
  *            MARK: - UICollectionView Delegate
@@ -139,3 +141,16 @@ extension MainViewController {
         self.dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
+
+/* =================================================================
+ *                   MARK: - UISearchBar Delegate
+ * ================================================================= */
+extension MainViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            self.getMovieList(searchText: text)
+            IQKeyboardManager.shared.resignFirstResponder()
+        }
+    }
+}
+

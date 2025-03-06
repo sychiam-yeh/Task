@@ -25,7 +25,44 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVy-75-IrX">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="227.66666666666666"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehd-ib-liG" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="39.333333333333343" y="91" width="314.33333333333326" height="45.666666666666657"/>
+                                                <subviews>
+                                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="E2V-G6-Byw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="46"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <scopeButtonTitles>
+                                                            <string>Title</string>
+                                                            <string>Title</string>
+                                                        </scopeButtonTitles>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="W8C-Cs-4lq"/>
+                                                        </connections>
+                                                    </searchBar>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="E2V-G6-Byw" firstAttribute="top" secondItem="Ehd-ib-liG" secondAttribute="top" id="a4O-Eo-6KH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="E2V-G6-Byw" secondAttribute="bottom" id="hcb-kb-46H"/>
+                                                    <constraint firstItem="E2V-G6-Byw" firstAttribute="leading" secondItem="Ehd-ib-liG" secondAttribute="leading" id="uvB-og-zXC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="E2V-G6-Byw" secondAttribute="trailing" id="y3c-Gu-pej"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Ehd-ib-liG" firstAttribute="height" secondItem="GVy-75-IrX" secondAttribute="height" multiplier="0.2" id="6nz-kN-cdV"/>
+                                            <constraint firstItem="Ehd-ib-liG" firstAttribute="centerX" secondItem="GVy-75-IrX" secondAttribute="centerX" id="8EN-yP-Eep"/>
+                                            <constraint firstItem="Ehd-ib-liG" firstAttribute="width" secondItem="GVy-75-IrX" secondAttribute="width" multiplier="0.8" id="AZv-9I-xFJ"/>
+                                            <constraint firstItem="Ehd-ib-liG" firstAttribute="centerY" secondItem="GVy-75-IrX" secondAttribute="centerY" id="JE7-Vr-gno"/>
+                                        </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cEO-eQ-Aka">
                                         <rect key="frame" x="0.0" y="227.66666666666669" width="393" height="531.33333333333326"/>
@@ -71,6 +108,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="Ef8-m0-w5e" id="lOn-1p-t61"/>
                         <outlet property="collectionView" destination="cEO-eQ-Aka" id="3Gc-0m-VLW"/>
+                        <outlet property="searchBar" destination="E2V-G6-Byw" id="wPs-dI-pt6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

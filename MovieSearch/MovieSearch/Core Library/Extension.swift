@@ -23,5 +23,4 @@ extension UIViewController {
     func hideLoadingScreen() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
     }
-    
 }

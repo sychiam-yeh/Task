@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,7 +31,6 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="o7W-Mw-hSJ" secondAttribute="trailing" id="JtU-2y-BVV"/>
                                     <constraint firstItem="o7W-Mw-hSJ" firstAttribute="top" secondItem="k7X-TY-Hr4" secondAttribute="top" id="Uxq-TG-jaz"/>
@@ -51,8 +49,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-Mg-iNR">
-                                <rect key="frame" x="166.33333333333334" y="392" width="43.666666666666657" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-Mg-iNR">
+                                <rect key="frame" x="10" y="392" width="356" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,6 +88,8 @@
                             <constraint firstItem="MTN-cD-rG5" firstAttribute="top" secondItem="b8S-UI-tk8" secondAttribute="bottom" constant="10" id="RxR-d0-YTf"/>
                             <constraint firstItem="MTN-cD-rG5" firstAttribute="centerX" secondItem="sRZ-Mg-iNR" secondAttribute="centerX" id="YOP-bR-Ebr"/>
                             <constraint firstItem="k7X-TY-Hr4" firstAttribute="height" secondItem="vj9-m3-EaS" secondAttribute="height" multiplier="0.7" id="amp-49-qQX"/>
+                            <constraint firstItem="sRZ-Mg-iNR" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vj9-m3-EaS" secondAttribute="leading" constant="10" id="dc3-Fs-S62"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sRZ-Mg-iNR" secondAttribute="trailing" constant="10" id="e3D-Vt-6RD"/>
                             <constraint firstAttribute="bottom" secondItem="MTN-cD-rG5" secondAttribute="bottom" constant="20" id="fY4-EI-DuL"/>
                             <constraint firstItem="MTN-cD-rG5" firstAttribute="height" secondItem="vj9-m3-EaS" secondAttribute="height" multiplier="0.0909091" id="hd6-4e-u0T"/>
                             <constraint firstItem="k7X-TY-Hr4" firstAttribute="width" secondItem="vj9-m3-EaS" secondAttribute="width" multiplier="0.8" id="jqd-mf-WQQ"/>
@@ -127,9 +127,4 @@
             <size key="intrinsicContentSize" width="117.33333333333333" height="34.333333333333336"/>
         </designable>
     </designables>
-    <resources>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
